@@ -16,3 +16,7 @@ body {
 .progress-add-city {
     margin-bottom: 60px;
 }
+
+#progress-metre {
+    width: 10px;
+}

@@ -110,6 +110,14 @@
         } else {
             $weatherTableData.append($row);
         }
+
+        if (addToTop) {
+            $row.addClass('success');
+
+            setTimeout(function () {
+                $row.removeClass('success');
+            }, 1000);
+        }
     };
 
 
@@ -205,6 +213,7 @@
         ];
         var $progressBar = $('#progress-metre');
 
+        // Increment cities added
         _citiesAdded++;
 
         // Reset classes
