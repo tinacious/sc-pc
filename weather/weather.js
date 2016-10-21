@@ -1,7 +1,11 @@
 (function ($) {
 
+
     var MY_AVATAR_ID = '104556134_25-s4';
     var openWeatherApiKey = '6824e1d69b650d6ec6d801d696f488ae';
+    var _citiesAdded = 0;
+
+    var $document = $(document);
 
 
     var getWeatherForCity = function getWeatherForCity (city, successCb) {
@@ -190,6 +194,41 @@
     };
 
 
+    var incrementProgressBar = function () {
+
+        var citiesAddedGoal = 6;
+        var progressClasses = [
+            'progress-bar-danger',
+            'progress-bar-warning',
+            'progress-bar-info',
+            'progress-bar-success'
+        ];
+        var $progressBar = $('#progress-metre');
+
+        _citiesAdded++;
+
+        // Reset classes
+        progressClasses.forEach(function (progressClass) {
+            $progressBar.removeClass(progressClass);
+        });
+
+        var percentageOfCitiesAdded = _citiesAdded / citiesAddedGoal * 100;
+        var progressClass = null;
+        if (percentageOfCitiesAdded >= 75) {
+            progressClass = progressClasses[3];
+        } else if (percentageOfCitiesAdded >= 50) {
+            progressClass = progressClasses[2];
+        } else if (percentageOfCitiesAdded >= 25) {
+            progressClass = progressClasses[1];
+        } else {
+            progressClass = progressClasses[0];
+        }
+
+        $progressBar.addClass(progressClass);
+        $progressBar.css('width', percentageOfCitiesAdded + '%');
+    };
+
+
     var initAddCityForm = function () {
 
         var $addCityForm = $('#form-add-city');
@@ -201,16 +240,14 @@
             var $cityField = $(this).find('#city-name');
             var cityName = $cityField.val();
 
-            // Do something with the city name
             addCityToWeatherTable(cityName);
-
-            // Clear city field
-            $cityField.val('');
+            $cityField.val(''); // Clear city field
+            incrementProgressBar();
         });
     };
 
 
-    $(document).ready(initAddCityForm);
+    $document.ready(initAddCityForm);
 
 
     /**

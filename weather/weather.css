@@ -12,3 +12,7 @@ body {
 .weather-table-bitmoji-image {
     width: 80px;
 }
+
+.progress-add-city {
+    margin-bottom: 60px;
+}
