@@ -2,6 +2,15 @@
 
 Build a weather app using the Open Weather Map API and Bitmoji.
 
+[Preview the app here](https://tinacious.github.io/sc-pc/weather/weather.html).
+
+You may not see the app load due to an unsafe content warning, which can be disabled.
+
+![](https://github.com/tinacious/sc-pc/blob/master/images/unsafe-scripts.png?raw=true)
+
+
+## Development
+
 You'll need an API key for the [Open Weather Map API](http://openweathermap.org/api).
 
 1. [Sign up](https://home.openweathermap.org/users/sign_up) for an account at Open Weather Map
