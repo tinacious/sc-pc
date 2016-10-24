@@ -37,3 +37,8 @@ Add the weather for multiple cities to a table.
 ### Add a city
 
 Extending the multiple cities section, we will add a form to dynamically add a new city.
+
+
+## Tabbed interface with bootstrap
+
+Add the tabbed interface with Twitter bootstrap JS components so that we can see either one city or multiple cities.
