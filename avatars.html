@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Choose an avatar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="favicon.png">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Patua+One|Raleway');
+            body {
+                font-family: Raleway, Arial, sans-serif;
+                text-align: center;
+                background: #39ca8e;
+                color: white;
+                margin: 0;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: Patua One, georgia, serif;
+            }
+            .gender-container {
+                width: 50%;
+                float: left;
+            }
+            .gender-container.female {
+                background: deeppink;
+            }
+            .gender-container.male {
+                background: dodgerblue;
+            }
+            .bitmoji {
+                width: 200px;
+                padding: 10px;
+                float: left;
+            }
+            .bitmoji img {
+                width: 180px;
+            }
+            .bitmoji:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Choose an Avatar</h1>
+
+        <div id="female" class="gender-container female">
+            <h2>Female</h2>
+        </div>
+
+        <div id="male" class="gender-container male">
+            <h2>Male</h2>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            (function () {
+                var avatarIds = {
+                    female: [
+                        '202070582_7-s4',
+
+                        // female staff
+                        '109783776_0-s4',
+                        '74498096_0-s4',
+                        '76342905_0-s4',
+                        '2309961_0-s4',
+                        '103172619_0-s4',
+                        '114862695_0-s4',
+                        '135474488_0-s4',
+                        '121931325_0-s4',
+                        '2204688_0-s4',
+                        '104556134_0-s4',
+                        '102981754_0-s4',
+                        '103488527_10-s4',
+                        '4055421_10-s1',
+                        '188022860_2-s4'
+                    ],
+                    male: [
+                        // male staff
+                        '123973985_10-s4',
+                        '117650216_0-s4',
+                        '108590751_0-s4',
+                        '117010983_0-s4',
+                        '17480919_0-s4',
+                        '2204128_0-s4',
+                        '114869928_0-s4',
+                        '118576805_0-s4',
+                        '120785996_0-s4',
+                        '104678677_0-s4',
+                        '1866231_0-s4',
+                        '2203656_10-s4',
+                        '1884643_20-s4',
+                        '1866965_20-s1',
+                        '111843723_20-s4'
+                    ]
+                };
+
+                Object.keys(avatarIds)
+                    .forEach(function (gender) {
+                        var $avatarContainer = $('#' + gender);
+
+                        avatarIds[gender].forEach(function (avatarId) {
+                            var bitmojiUrl = 'https://render.bitstrips.com/v2/cpanel/9991430-AVATAR_ID-v1.png?width=200';
+                            var $image = $('<img />');
+                            var $bitmoji = $('<div class="bitmoji" />');
+
+                            $image.attr('src', bitmojiUrl.replace('AVATAR_ID', avatarId));
+                            $bitmoji.data('avatarId', avatarId);
+
+                            $bitmoji.append($image);
+                            $avatarContainer.append($bitmoji);
+                        });
+                    });
+
+                $('.bitmoji').on('click', function (event) {
+                    var avatarId = $(this).data('avatarId');
+                    alert(avatarId);
+                });
+            })();
+        </script>
+</body>
+</html>
