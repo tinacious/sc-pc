@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One|Raleway');
+
+/* Typography */
+body {
+    font-family: Raleway, Arial, sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Patua One, georgia, serif;
+}
+
+
+/* Helpers */
+.hidden-mobile {
+    display: none;
+}
+
+
+/* Header */
+.site-header {
+    background: mediumvioletred;
+}
+
+.site-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.site-title h1 {
+    margin: 0;
+}
+
+/* Nav */
+.menu-link {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+}
+
+.nav-primary a {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-primary a.active {
+    background: steelblue;
+}
+
+
+/* About */
+.about-image img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Contact */
+.form-section {
+    margin-top: 30px;
+}
+
+.form-section .btn {
+    background-color: mediumvioletred;
+    color: white;
+    transition: background-color 0.5s linear;
+}
+
+.form-section .btn:hover {
+    background-color: steelblue;
+    transition: background-color 0.5s linear;
+}
+
+.snapchat-username {
+    background: #333;
+    display: inline-block;
+    color: white;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    transition: background-color 0.5s linear;
+}
+
+.snapchat-username:hover {
+    background: #FFFC00;
+    color: #333;
+    transition: background-color 0.5s linear;
+    cursor: help;
+}
+
+.fa-snapchat {
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+    color: #FFFC00;
+    transition: color 0.5s linear;
+}
+
+.snapchat-username:hover .fa-snapchat {
+    color: #333;
+    transition: color 0.5s linear;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    /* Helpers */
+    .hidden-desktop {
+        display: none;
+    }
+
+    .hidden-mobile {
+        display: block;
+    }
+
+
+    /* Nav */
+    .nav-primary {
+        text-align: right;
+    }
+
+    .nav-primary a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: 1px solid transparent;
+    }
+
+    .nav-primary a.active {
+        border-radius: 5px;
+        border-color: white;
+        transition: background-color 0.5s ease-in;
+    }
+
+    .nav-primary a:hover {
+        background-color: white;
+        color: mediumvioletred;
+        border-radius: 5px;
+        transition: background-color 0.5s ease-in;
+    }
+}
